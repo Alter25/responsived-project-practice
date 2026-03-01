@@ -13,9 +13,8 @@ export default function layout({children}:Props) {
         <FiAlignJustify/>
       </button>
       <h1 className="header-text text-color-primary">Bienvenidos!</h1>
-      <div><p>algo</p></div>
     </header>
     <main className="layout-main">{children}</main>
-    <footer className="layout-footer">some content here</footer>
+    <footer className="layout-footer">© 2026 Todos los derechos reservados</footer>
   </section>
 }

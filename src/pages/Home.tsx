@@ -1,8 +1,11 @@
 import Layout from "../layouts/Layout"
+import NewTask from "../components/NewTask"
 
 
 export default function Home() {
   return <Layout>
-    aqui deberia haber algo;
+    <div>
+      <NewTask/>
+    </div>
   </Layout>
 }
