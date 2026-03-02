@@ -4,15 +4,16 @@ import type { TaskType } from "../types/types";
 
 interface StoreType{
   tasks: TaskType[];
+  getId: () => number;
   addTask: (t:TaskType) => void;
 }
 
-export const TaskStore = create<StoreType>((set,get) => ({
-  tasks: {} as TaskType[],
+export const useTaskStore = create<StoreType>((set,get) => ({
+  tasks: [],
   getId: () => get().tasks.length,
   addTask: (t) => {
     set((state) => ({
-      tasks:[t,...state.tasks],
+      tasks:[...state.tasks,t],
     }))
   }
 }));

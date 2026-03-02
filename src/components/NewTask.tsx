@@ -1,15 +1,23 @@
 import { useState } from "react";
-import { TaskStore } from "../Stores/TaskStore";
+import { useTaskStore } from "../Stores/TaskStore";
+import type { TaskType } from "../types/types";
 
 export default function NewTask() {
-  const [name, setName] = useState("");
-  const [text, setText] = useState("");
+  const [ name, setName ] = useState<string>("");
+  const [ text, setText ] = useState<string>("");
+  const { tasks,addTask, getId } = useTaskStore();
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log({ name, text });
     setName("");
     setText("");
+    const tarea:TaskType = {
+      id:getId(),
+      name,
+      text,
+    }
+    addTask(tarea);
+    console.log(tasks);
   };
 
   return (
