@@ -43,7 +43,44 @@
 }
 .newTask-container{
   margin:8px;
-  height: 200px;
+  /* height: 200px; */
   border:1px dashed yellow;
   border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+/* nuevas reglas para el formulario */
+.newTask-form{
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+  width:100%;
+  max-width:400px;
+}
+.form-group{
+  display:flex;
+  flex-direction:column;
+}
+.newTask-form input,
+.newTask-form textarea{
+  padding:8px;
+  border: 1px solid #ccc;
+  border-radius:4px;
+  font-family: inherit;
+}
+.newTask-form textarea{
+  resize: vertical;
+  min-height:80px;
+}
+
+/* focus and hover enhancements */
+.newTask-form input:focus,
+.newTask-form textarea:focus{
+  outline:none;
+  border-color:#888;
+}
+
+.button-primary:hover{
+  background-color:#333;
 }
